@@ -45,16 +45,18 @@ export const App: React.FC = () => {
           <DateCalendarValue/>
          </div>
          <div className='main-layout-box1'>
+         <h1 className='main-layout-box1-text'>Tasks</h1>
            {/*Conditional rendering that will render the task once saved and no task added then a message will appear */}
             {todos.length === 0 ? (
-             <h1 className='main-layout-box1-text'>No tasks added</h1>
+             <h1 className='main-layout-box1-text2'>No tasks added</h1>
            ) : (
-           <ul>
+           <ul className='main-layout-box1-to-dolist'>
              {todos.map((todo) => (
              <li
                key={todo.id}
                onClick={() => handleToggle(todo.id)}
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+               className='main-layout-box1-to-dos'
               >
                {todo.text}
              </li>
