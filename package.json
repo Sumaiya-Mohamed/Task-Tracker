@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "@date-io/date-fns": "^2.17.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@material-ui/pickers": "^3.3.11",
+    "@mui/material": "^5.14.18",
+    "@mui/x-date-pickers": "^6.18.1",
+    "@progress/kendo-licensing": "^1.3.3",
+    "@progress/kendo-react-dateinputs": "^6.1.1",
+    "@progress/kendo-react-intl": "^6.1.1",
+    "@progress/kendo-svg-icons": "^2.0.0",
+    "dayjs": "^1.11.10",
+    "sass": "^1.69.5"
+  }
+}
