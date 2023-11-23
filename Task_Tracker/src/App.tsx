@@ -57,6 +57,7 @@ export const App: React.FC = () => {
                onClick={() => handleToggle(todo.id)}
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
                className='main-layout-box1-to-dos'
+                
               >
                {todo.text}
              </li>
@@ -67,35 +68,23 @@ export const App: React.FC = () => {
    
          <div className='main-layout-box2'>
           <h2 className='main-layout-box2-text'>Add a task</h2>
-          <input type="text" placeholder="add item" value={input}
-            onChange={(e)=> setInput(e.target.value)}/>
-           <button onClick={()=> handleSaveTask()}>Save</button>
+             <textarea rows="5" cols="25"
+             type="text" placeholder="Add item" value={input}
+             onChange={(e)=> setInput(e.target.value)}
+             className='main-layout-box2-inputfield'
+             >
+             </textarea>
+             <div>
+               <button onClick={()=> handleSaveTask()}
+               className='main-layout-box2-submitbutton'
+               >Save
+               </button>
+             </div>
+             
          </div>  
         </div>
     </div>
     )
 }
-
-/*function App() {
-
-
-  return (
-    <div >
-    <Header />
-    <div className='main-layout'>
-     <div className='main-layout-box'>
-      <DateCalendarValue/>
-     </div>
-    <div className='main-layout-box1'>
-      <h2 className='main-layout-box1-text'>Tasks</h2>
-    </div>
-    <div className='main-layout-box2'>
-      <h2 className='main-layout-box2-text'>Add a task</h2>
- 
-    </div>
-    </div>
-  </div>
-  )
-}*/
 
 export default App

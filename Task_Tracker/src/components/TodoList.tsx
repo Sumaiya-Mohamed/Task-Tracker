@@ -55,7 +55,9 @@ export const ToDoList: React.FC = () => {
         
         <h4>Add a task</h4>
         <input type="text" placeholder="add item" value={input}
-        onChange={(e)=> setInput(e.target.value)}/>
+        onChange={(e)=> setInput(e.target.value)}
+        
+        />
         <button onClick={()=> handleSaveTask()}>Save</button>
     </div>
     )

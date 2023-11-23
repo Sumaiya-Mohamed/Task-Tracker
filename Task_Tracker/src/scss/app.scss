@@ -77,22 +77,25 @@
          
         &-to-dolist{
             list-style: none;
+             width: 80%;
+             
         }
 
         &-to-dos{
             list-style: none;
             background-color: white;
             padding-left: 60px;
+            padding-right: 60px;
             padding-top: 10px;
             font-size: 20px;
             height: 50px;
             border-radius: 20px;
             color: black;
-            width: 85%;
             margin-left: 15px;
             margin-top: 20px;
             min-height: fit-content;
             min-width: fit-content;
+           
         }
     }
 
@@ -107,6 +110,29 @@
         &-text{
             padding: 15px 30px;
             font-size: 27px;
+        }
+
+        &-inputfield{
+            width: 60ch;
+            height: 55%;
+            border-style: initial;
+            margin-left: 20px;
+            padding: 10px;
+            padding-top: 0;
+            border-radius: 15px;
+            border-style: groove;
+            border-color: var(--color-dark-grey);
+            border-width: 2px;
+        }
+
+        &-submitbutton{
+            margin: 15px 20px;
+            height: 2.5em;
+            width: 10%;
+            border-radius: 10px;
+            border-style: none;
+            background-color: var(--color-dark-grey);
+            color: white;
         }
     }
 }
