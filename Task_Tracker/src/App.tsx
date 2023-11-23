@@ -1,7 +1,9 @@
 //import { useState } from 'react'
  import { Header } from './components/Header'
  import DateCalendarValue from './components/DateCalendarValue';
-
+import { Checkbox } from '@mui/material';
+import { createTheme } from '@mui/material/styles';
+import { ThemeProvider } from '@mui/material/styles';
  import React, {useState} from "react"
 
 
@@ -17,8 +19,20 @@ export const App: React.FC = () => {
 
     const [input, setInput] = useState<string>("");
 
+  
 
-    /*Function to  */
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#000',
+    },
+  },
+});
+
+
+
+
+    /*Function to cross out/ tick when a user finishes a task */
     const handleToggle = (id: number) => {
         setTodos(
             todos.map((todo) => {
@@ -38,6 +52,7 @@ export const App: React.FC = () => {
         setInput("")
     }
     return (
+      <ThemeProvider theme={theme}>
        <div>
         <Header />
         <div className='main-layout'>
@@ -48,7 +63,7 @@ export const App: React.FC = () => {
          <h1 className='main-layout-box1-text'>Tasks</h1>
            {/*Conditional rendering that will render the task once saved and no task added then a message will appear */}
             {todos.length === 0 ? (
-             <h1 className='main-layout-box1-text2'>No tasks added</h1>
+             <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
            ) : (
            <ul className='main-layout-box1-to-dolist'>
              {todos.map((todo) => (
@@ -59,6 +74,8 @@ export const App: React.FC = () => {
                className='main-layout-box1-to-dos'
                 
               >
+                <Checkbox defaultChecked color='primary' checked={todo.completed}
+                onChange={() => handleToggle(todo.id)}/>
                {todo.text}
              </li>
              ))}
@@ -84,6 +101,7 @@ export const App: React.FC = () => {
          </div>  
         </div>
     </div>
+    </ThemeProvider>
     )
 }
 
