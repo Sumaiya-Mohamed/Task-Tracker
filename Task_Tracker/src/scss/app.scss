@@ -1,9 +1,11 @@
-@media screen and (max-width: 43.75em){
+@media screen and (max-width: 62.375em){
     body .main-layout{
         display: grid;
         width: 100%;
         grid-template-columns: repeat(1,1fr);
         grid-template-rows: repeat(3,1fr);
+        padding-left: 25px;
+       
 
         &-box{
             grid-column-start: 1;
@@ -20,6 +22,18 @@
             grid-row-end: 4;
             border-radius: 15px;
             width: 90%;
+
+           
+
+            &-to-dos{
+                min-width: fit-content;
+                font-size: 20px;
+                padding-left: 15px;
+                padding-right: 5px;
+                text-overflow: clip;
+                height: fit-content;
+                padding-bottom: 15px;
+            }
         }
 
         &-box2{
@@ -30,6 +44,15 @@
             grid-row-end: 3;
             border-radius: 20px;
             width: 90%;
+            min-height: fit-content;
+           
+            &-inputfield{
+                width: 70%;
+            }
+
+            &-submitbutton{
+                width: 30%;
+            }
         }
 
     }

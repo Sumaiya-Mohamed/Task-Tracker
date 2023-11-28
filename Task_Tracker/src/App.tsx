@@ -85,7 +85,7 @@ const theme = createTheme({
    
          <div className='main-layout-box2'>
           <h2 className='main-layout-box2-text'>Add a task</h2>
-             <textarea rows="5" cols="25"
+             <textarea rows={5} cols={10}
              type="text" placeholder="Add item" value={input}
              onChange={(e)=> setInput(e.target.value)}
              className='main-layout-box2-inputfield'
