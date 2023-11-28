@@ -2,8 +2,6 @@
  import { Header } from './components/Header'
  import DateCalendarValue from './components/DateCalendarValue';
 import { Checkbox } from '@mui/material';
-import { createTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@mui/material/styles';
  import React, {useState} from "react"
 
 
@@ -18,17 +16,6 @@ export const App: React.FC = () => {
     const [todos, setTodos] = useState<item[]>([]);
 
     const [input, setInput] = useState<string>("");
-
-  
-
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#000',
-    },
-  },
-});
-
 
 
 
@@ -45,14 +32,13 @@ const theme = createTheme({
 
     }
 
-    /*Function to submit the task once "save" button is clickec (adds the task) */
+    /*Function to submit the task once "save" button is clicked (adds the task) */
     const handleSaveTask = () => {
         const newTodo = {id: Date.now(), text: input, completed: false};
         setTodos([...todos, newTodo])
         setInput("")
     }
     return (
-      <ThemeProvider theme={theme}>
        <div>
         <Header />
         <div className='main-layout'>
@@ -101,7 +87,6 @@ const theme = createTheme({
          </div>  
         </div>
     </div>
-    </ThemeProvider>
     )
 }
 
