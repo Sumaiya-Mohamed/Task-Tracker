@@ -32,6 +32,14 @@ export const App: React.FC = () => {
 
     }
 
+    /*Function that handles deleting a task*/ 
+    function handleDelete(id: number){
+     const taskCopy = [...todos];
+     taskCopy.splice(id,1);
+     setTodos(taskCopy)
+
+    }
+
     /*Function to submit the task once "save" button is clicked (adds the task) */
     const handleSaveTask = () => {
         const newTodo = {id: Date.now(), text: input, completed: false};
@@ -52,17 +60,20 @@ export const App: React.FC = () => {
              <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
            ) : (
            <ul className='main-layout-box1-to-dolist'>
-             {todos.map((todo) => (
+             {todos.map((todo,id) => (
              <li
                key={todo.id}
-               onClick={() => handleToggle(todo.id)}
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
                className='main-layout-box1-to-dos'
                 
               >
                 <Checkbox defaultChecked color='primary' checked={todo.completed}
                 onChange={() => handleToggle(todo.id)}/>
-               {todo.text}
+                  {todo.text}
+                  <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-remove'>
+                   Remove
+                  </button>
+
              </li>
              ))}
             </ul>

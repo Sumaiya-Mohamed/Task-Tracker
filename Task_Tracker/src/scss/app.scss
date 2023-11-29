@@ -34,6 +34,8 @@
                 height: fit-content;
                 padding-bottom: 15px;
             }
+
+           
         }
 
         &-box2{
@@ -119,6 +121,16 @@
             min-height: fit-content;
             min-width: fit-content;
            
+        }
+
+        &-remove{
+             width: fit-content;
+             padding: 5px;
+             margin-left: 10%;  
+             background-color: red;
+             border-style: none;
+             border-radius: 5px;
+             cursor: pointer;
         }
     }
 
