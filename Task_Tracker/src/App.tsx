@@ -69,7 +69,7 @@ const theme = createTheme({
       }
     }, [setInput, editTodo])
 
-    /*Function to submit the task once "save" button is clickec (adds the task) */
+    /*Function to submit the task once "save" button is clicked (adds the task) */
     const handleSaveTask = () => {
       if (!editTodo) {
          const newTodo = {id: uuidv4(), text: input, completed: false};
@@ -88,7 +88,6 @@ const theme = createTheme({
     }
 
     return (
-      <ThemeProvider theme={theme}>
        <div>
         <Header />
         <div className='main-layout'>
@@ -129,7 +128,7 @@ const theme = createTheme({
    
          <div className='main-layout-box2'>
           <h2 className='main-layout-box2-text'>Add a task</h2>
-             <textarea rows="5" cols="25"
+             <textarea rows={5} cols={10}
              type="text" placeholder="Add item" value={input}
              onChange={(e)=> setInput(e.target.value)}
              className='main-layout-box2-inputfield'
@@ -146,7 +145,6 @@ const theme = createTheme({
          </div>  
         </div>
     </div>
-    </ThemeProvider>
     )
 }
 
