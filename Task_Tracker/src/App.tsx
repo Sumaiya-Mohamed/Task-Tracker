@@ -4,11 +4,15 @@
 import { Checkbox } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
 import { ThemeProvider } from '@mui/material/styles';
- import React, {useState} from "react"
+ import React, {useEffect, useState} from "react"
+ import IconButton from '@mui/material/IconButton';
+ import EditIcon from '@mui/icons-material/Edit';
+ import { v4 as uuidv4 } from 'uuid';
+
 
 
 interface item {
-    id: number;
+    id: string;
     text: string;
     completed: boolean;
 }
@@ -18,6 +22,8 @@ export const App: React.FC = () => {
     const [todos, setTodos] = useState<item[]>([]);
 
     const [input, setInput] = useState<string>("");
+
+    const [editTodo, setEditTodo] = useState<item | null>(null);
 
   
 
@@ -33,7 +39,8 @@ const theme = createTheme({
 
 
     /*Function to cross out/ tick when a user finishes a task */
-    const handleToggle = (id: number) => {
+    const handleToggle = (id: string) => {
+      console.log(id)
         setTodos(
             todos.map((todo) => {
                 if (todo.id === id) {
@@ -42,15 +49,44 @@ const theme = createTheme({
                 return todo
             })
         )
+       
 
     }
+
+    const updateTodo = (text: string, id: string, completed: boolean ) => {
+      const updatedTodo = todos.map((todo) => 
+        todo.id === id ? {...todo, text, completed} : todo
+      )
+      setTodos(updatedTodo)
+      setEditTodo(null);
+    }
+
+    useEffect(() => {
+      if (editTodo){
+        setInput(editTodo.text)
+      } else {
+        setInput("")
+      }
+    }, [setInput, editTodo])
 
     /*Function to submit the task once "save" button is clickec (adds the task) */
     const handleSaveTask = () => {
-        const newTodo = {id: Date.now(), text: input, completed: false};
+      if (!editTodo) {
+         const newTodo = {id: uuidv4(), text: input, completed: false};
         setTodos([...todos, newTodo])
         setInput("")
+      } else {
+        updateTodo(input, editTodo.id, editTodo.completed)
+      }
+       
+       
     }
+
+    const handleEditTask = (id : string) => {
+      const findTodo = todos.find((todo) => todo.id === id);
+      setEditTodo(findTodo || null);
+    }
+
     return (
       <ThemeProvider theme={theme}>
        <div>
@@ -67,17 +103,25 @@ const theme = createTheme({
            ) : (
            <ul className='main-layout-box1-to-dolist'>
              {todos.map((todo) => (
+              <>
              <li
                key={todo.id}
                onClick={() => handleToggle(todo.id)}
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-               className='main-layout-box1-to-dos'
-                
-              >
-                <Checkbox defaultChecked color='primary' checked={todo.completed}
+               className='main-layout-box1-to-dos'>
+                <Checkbox  color='primary' checked={todo.completed}
                 onChange={() => handleToggle(todo.id)}/>
                {todo.text}
              </li>
+             
+             <div>
+             <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
+                <EditIcon/>
+              </IconButton>
+</div>
+             
+    </>         
+           
              ))}
             </ul>
           )}
@@ -94,7 +138,8 @@ const theme = createTheme({
              <div>
                <button onClick={()=> handleSaveTask()}
                className='main-layout-box2-submitbutton'
-               >Save
+               >
+                {editTodo ? "OK" : "Add"}
                </button>
              </div>
              

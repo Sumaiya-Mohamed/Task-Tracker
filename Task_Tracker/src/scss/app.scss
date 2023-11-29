@@ -78,6 +78,7 @@
         &-to-dolist{
             list-style: none;
              width: 80%;
+            
              
         }
 
@@ -95,7 +96,7 @@
             margin-top: 20px;
             min-height: fit-content;
             min-width: fit-content;
-           
+            
         }
     }
 
@@ -158,5 +159,9 @@
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1vooibu-MuiSvgIcon-root{
   color: white;
+}
+
+.MuiIconButton-sizeLarge {
+    color: yellow;
 }
 
