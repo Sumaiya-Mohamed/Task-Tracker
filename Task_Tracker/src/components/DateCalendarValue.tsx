@@ -22,7 +22,7 @@ const theme = createTheme({
  Moment.js-compatible API.
 */
 export default function DateCalendarValue() {
-  const [value, setValue] = React.useState<Dayjs | null>(dayjs('2022-04-17'));
+  const [value, setValue] = React.useState<Dayjs | null>(dayjs());
 
   return (
     <ThemeProvider theme={theme}>

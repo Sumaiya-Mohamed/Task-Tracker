@@ -103,6 +103,7 @@
         &-to-dolist{
             list-style: none;
              width: 80%;
+            
              
         }
 
@@ -120,17 +121,22 @@
             margin-top: 20px;
             min-height: fit-content;
             min-width: fit-content;
-           
+            width: 100%;
+            display: flex;
+            align-items: center;
+        }
+         
+
+        &-dustbin{
+            width: 30%;
         }
 
-        &-remove{
-             width: fit-content;
-             padding: 5px;
-             margin-left: 10%;  
-             background-color: red;
-             border-style: none;
-             border-radius: 5px;
+        &-delete{
+             width: 20%;
+             margin-left: 10%; 
              cursor: pointer;
+             background-color: white;
+             border-style: none;
         }
     }
 
@@ -158,6 +164,7 @@
             border-style: groove;
             border-color: var(--color-dark-grey);
             border-width: 2px;
+            font-size: 1.25rem;
         }
 
         &-submitbutton{
@@ -192,5 +199,9 @@
 
 .MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1vooibu-MuiSvgIcon-root{
   color: white;
+}
+
+.MuiIconButton-sizeLarge {
+    color: yellow;
 }
 
