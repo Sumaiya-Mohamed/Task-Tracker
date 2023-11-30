@@ -35,7 +35,12 @@ const theme = createTheme({
   },
 });
 
-
+   /*Function that handles the delete functionality for each */
+   function handleDelete(id: number){
+    const taskCopy = [...todos];
+    taskCopy.splice(id,1);
+    setTodos(taskCopy);
+   }
 
 
     /*Function to cross out/ tick when a user finishes a task */
@@ -49,7 +54,6 @@ const theme = createTheme({
                 return todo
             })
         )
-       
 
     }
 
@@ -99,6 +103,11 @@ const theme = createTheme({
          <h1 className='main-layout-box1-text'>Tasks</h1>
          {todos.length === 0 ? (
              <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
+           ) : (
+           <ul className='main-layout-box1-to-dolist'>
+             {todos.map((todo,id) => (
+             <li
+               key={todo.id}
          ) : (
           <div className='main-layout-box1-to-dolist' >
             {todos.map((todo) => (
@@ -106,6 +115,17 @@ const theme = createTheme({
             key={todo.id}
                
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+               className='main-layout-box1-to-dos'>
+                <Checkbox  color='primary' checked={todo.completed}
+                onChange={() => handleToggle(todo.id)}/>
+                  {todo.text}
+                  <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
+                  <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
+                  </img>
+                  </button>
+                  
+                 
+             <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)} className='main-layout-box1-edit'>
             className='main-layout-box1-to-dos'>  
             <div className='main-layout-box1-checkbox'>
               <Checkbox  color='primary' checked={todo.completed}
