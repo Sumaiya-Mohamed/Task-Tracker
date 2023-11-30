@@ -92,7 +92,78 @@ const theme = createTheme({
     }
 
     return (
-      <ThemeProvider theme={theme}>
+    //   <ThemeProvider theme={theme}>
+    //    <div>
+    //     <Header />
+    //     <div className='main-layout'>
+    //      <div className='main-layout-box'>
+    //       <DateCalendarValue/>
+    //      </div>
+    //      <div className='main-layout-box1'>
+    //      <h1 className='main-layout-box1-text'>Tasks</h1>
+    //      {todos.length === 0 ? (
+    //          <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
+    //        )  : (
+    //       <div className='main-layout-box1-to-dolist' >
+    //         {todos.map((todo) => (
+    //         <div key={todo.id}
+    //            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
+    //            className='main-layout-box1-to-dos'>
+    //             <Checkbox  color='primary' checked={todo.completed}
+    //             onChange={() => handleToggle(todo.id)}/>
+    //               {todo.text}
+    //               {/* <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
+    //               <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
+    //               </img>
+    //               </button> */}
+                  
+                 
+    //        {/*  <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)} className='main-layout-box1-edit'>
+    //          className='main-layout-box1-to-dos'>  
+    //         <div className='main-layout-box1-checkbox'>
+    //           <Checkbox  color='primary' checked={todo.completed}
+    //             onChange={() => handleToggle(todo.id)}
+    //             onClick={() => handleToggle(todo.id)}/>
+    //         </div>
+    //         {todo.text} */}
+    //         <div className='main-layout-box1-edit'>
+    //           <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
+    //             <EditIcon/>
+    //           </IconButton>
+    //           </div>
+    //           <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
+    //               <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
+    //               </img>
+    //               </button>
+    //           </div>
+              
+    //      ))}  
+    //       </ul>
+    //      )}
+    //      </div>
+   
+    //      <div className='main-layout-box2'>
+    //       <h2 className='main-layout-box2-text'>Add a task</h2>
+    //          <textarea rows="5" cols="25"
+    //          type="text" placeholder="Add item" value={input}
+    //          onChange={(e)=> setInput(e.target.value)}
+    //          className='main-layout-box2-inputfield'
+    //          >
+    //          </textarea>
+    //          <div>
+    //            <button onClick={()=> handleSaveTask()}
+    //            className='main-layout-box2-submitbutton'
+    //            >
+    //             {editTodo ? "OK" : "Add"}
+    //            </button>
+    //          </div>
+             
+    //      </div>  
+    //     </div>
+    // </div>
+    // </ThemeProvider>
+
+    <ThemeProvider theme={theme}>
        <div>
         <Header />
         <div className='main-layout'>
@@ -101,47 +172,43 @@ const theme = createTheme({
          </div>
          <div className='main-layout-box1'>
          <h1 className='main-layout-box1-text'>Tasks</h1>
-         {todos.length === 0 ? (
+           {/*Conditional rendering that will render the task once saved and no task added then a message will appear */}
+            {todos.length === 0 ? (
              <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
            ) : (
-           <ul className='main-layout-box1-to-dolist'>
+           <div className='main-layout-box1-to-dolist'>
              {todos.map((todo,id) => (
-             <li
+             <div
                key={todo.id}
-         ) : (
-          <div className='main-layout-box1-to-dolist' >
-            {todos.map((todo) => (
-            <div 
-            key={todo.id}
-               
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
                className='main-layout-box1-to-dos'>
+                <div>
                 <Checkbox  color='primary' checked={todo.completed}
                 onChange={() => handleToggle(todo.id)}/>
+                </div>
                   {todo.text}
                   <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
                   <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
                   </img>
                   </button>
-                  
-                 
-             <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)} className='main-layout-box1-edit'>
-            className='main-layout-box1-to-dos'>  
-            <div className='main-layout-box1-checkbox'>
-              <Checkbox  color='primary' checked={todo.completed}
-                onChange={() => handleToggle(todo.id)}
-                onClick={() => handleToggle(todo.id)}/>
-            </div>
-            {todo.text}
-            <div className='main-layout-box1-edit'>
-              <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
-                <EditIcon/>
+                  <div>
+             <IconButton aria-label="edit" size="large" 
+             onClick={() => handleEditTask(todo.id)} 
+             className='main-layout-box1-edit'
+             sx={{color: '#000'}}>
+                <EditIcon sx={{fontSize: '1.7rem'}}/>
               </IconButton>
-              </div>
-              </div>
-         ))}  
-          </div>
-         )}
+             </div>
+
+             </div>
+             
+             
+             
+        
+           
+             ))}
+            </div>
+          )}
          </div>
    
          <div className='main-layout-box2'>
