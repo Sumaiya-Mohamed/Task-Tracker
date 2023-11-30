@@ -97,34 +97,31 @@ const theme = createTheme({
          </div>
          <div className='main-layout-box1'>
          <h1 className='main-layout-box1-text'>Tasks</h1>
-           {/*Conditional rendering that will render the task once saved and no task added then a message will appear */}
-            {todos.length === 0 ? (
+         {todos.length === 0 ? (
              <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
-           ) : (
-           <ul className='main-layout-box1-to-dolist'>
-             {todos.map((todo) => (
-              <>
-             <li
-               key={todo.id}
-               onClick={() => handleToggle(todo.id)}
+         ) : (
+          <div className='main-layout-box1-to-dolist' >
+            {todos.map((todo) => (
+            <div 
+            key={todo.id}
+               
                style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-               className='main-layout-box1-to-dos'>
-                <Checkbox  color='primary' checked={todo.completed}
-                onChange={() => handleToggle(todo.id)}/>
-               {todo.text}
-             </li>
-             
-             <div>
-             <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
+            className='main-layout-box1-to-dos'>  
+            <div className='main-layout-box1-checkbox'>
+              <Checkbox  color='primary' checked={todo.completed}
+                onChange={() => handleToggle(todo.id)}
+                onClick={() => handleToggle(todo.id)}/>
+            </div>
+            {todo.text}
+            <div className='main-layout-box1-edit'>
+              <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
                 <EditIcon/>
               </IconButton>
-</div>
-             
-    </>         
-           
-             ))}
-            </ul>
-          )}
+              </div>
+              </div>
+         ))}  
+          </div>
+         )}
          </div>
    
          <div className='main-layout-box2'>
