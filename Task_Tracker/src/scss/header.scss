@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:wght@400;500;600&display=swap');
 :root{
     --color-dark-grey: #1E1E1E;
     --color-light-pink: #E5CDCD;
@@ -17,7 +18,18 @@
   
    &-heading{
      padding: 15px;
-     font-family: Arial, Helvetica, sans-serif;
+     font-family: 'Inter', Arial, Helvetica, sans-serif;
      color: white;
+     margin-left: 3.5rem;
    }
+}
+
+@media screen and (max-width: 768px){
+  .header-bar {
+    width: 100%;
+  
+  &-heading {
+    margin-left: 2rem;
+  }
+}
 }

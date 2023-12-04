@@ -136,6 +136,11 @@
             align-items: center;
             justify-items: stretch;
         }
+        &-priority {
+            display: block;
+            font-size: 0.7rem;
+            font-weight: 300;
+        }
         &-edit {
             justify-self: end;  
             align-items: center;
@@ -184,12 +189,16 @@
 
         &-submitbutton{
             margin: 15px 20px;
-            height: 2.5em;
-            width: 10%;
+            height: 3em;
+            width: 15%;
             border-radius: 10px;
             border-style: none;
             background-color: var(--color-dark-grey);
             color: white;
+        }
+
+        &-submitbutton:hover {
+            cursor: pointer;
         }
     }
 }
