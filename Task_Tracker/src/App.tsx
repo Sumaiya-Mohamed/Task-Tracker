@@ -1,5 +1,6 @@
-//import { useState } from 'react'
+
  import { Header } from './components/Header'
+ import { PriorityLevel } from './components/PriorityLevel/PriorityLevel';
  import DateCalendarValue from './components/DateCalendarValue';
 import { Checkbox } from '@mui/material';
 import { createTheme } from '@mui/material/styles';
@@ -15,6 +16,7 @@ interface item {
     id: string;
     text: string;
     completed: boolean;
+    priority : "High" | "Medium" | "Low";
 }
 
 export const App: React.FC = () => {
@@ -24,6 +26,8 @@ export const App: React.FC = () => {
     const [input, setInput] = useState<string>("");
 
     const [editTodo, setEditTodo] = useState<item | null>(null);
+
+    const [newPriority, setNewPriority] = useState<"High" | "Medium" | "Low">("High")
 
   
 
@@ -57,9 +61,11 @@ const theme = createTheme({
 
     }
 
-    const updateTodo = (text: string, id: string, completed: boolean ) => {
+    const updateTodo = (text: string, id: string, completed: boolean, priority: "High" | "Medium" | "Low" ) => {
+      console.log('Updating Todo:', { text, id, completed, priority });
       const updatedTodo = todos.map((todo) => 
-        todo.id === id ? {...todo, text, completed} : todo
+      
+        todo.id === id ? {...todo, text, completed, priority} : todo
       )
       setTodos(updatedTodo)
       setEditTodo(null);
@@ -68,6 +74,7 @@ const theme = createTheme({
     useEffect(() => {
       if (editTodo){
         setInput(editTodo.text)
+        setNewPriority(editTodo.priority)
       } else {
         setInput("")
       }
@@ -76,11 +83,12 @@ const theme = createTheme({
     /*Function to submit the task once "save" button is clickec (adds the task) */
     const handleSaveTask = () => {
       if (!editTodo) {
-         const newTodo = {id: uuidv4(), text: input, completed: false};
+         const newTodo = {id: uuidv4(), text: input, completed: false, priority: newPriority};
         setTodos([...todos, newTodo])
         setInput("")
+        setNewPriority("High")
       } else {
-        updateTodo(input, editTodo.id, editTodo.completed)
+        updateTodo(input, editTodo.id, editTodo.completed, newPriority)
       }
        
        
@@ -92,76 +100,7 @@ const theme = createTheme({
     }
 
     return (
-    //   <ThemeProvider theme={theme}>
-    //    <div>
-    //     <Header />
-    //     <div className='main-layout'>
-    //      <div className='main-layout-box'>
-    //       <DateCalendarValue/>
-    //      </div>
-    //      <div className='main-layout-box1'>
-    //      <h1 className='main-layout-box1-text'>Tasks</h1>
-    //      {todos.length === 0 ? (
-    //          <h1 className='main-layout-box1-text2'>No tasks added yet</h1>
-    //        )  : (
-    //       <div className='main-layout-box1-to-dolist' >
-    //         {todos.map((todo) => (
-    //         <div key={todo.id}
-    //            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-    //            className='main-layout-box1-to-dos'>
-    //             <Checkbox  color='primary' checked={todo.completed}
-    //             onChange={() => handleToggle(todo.id)}/>
-    //               {todo.text}
-    //               {/* <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
-    //               <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
-    //               </img>
-    //               </button> */}
-                  
-                 
-    //        {/*  <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)} className='main-layout-box1-edit'>
-    //          className='main-layout-box1-to-dos'>  
-    //         <div className='main-layout-box1-checkbox'>
-    //           <Checkbox  color='primary' checked={todo.completed}
-    //             onChange={() => handleToggle(todo.id)}
-    //             onClick={() => handleToggle(todo.id)}/>
-    //         </div>
-    //         {todo.text} */}
-    //         <div className='main-layout-box1-edit'>
-    //           <IconButton aria-label="edit" size="large" onClick={() => handleEditTask(todo.id)}>
-    //             <EditIcon/>
-    //           </IconButton>
-    //           </div>
-    //           <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
-    //               <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
-    //               </img>
-    //               </button>
-    //           </div>
-              
-    //      ))}  
-    //       </ul>
-    //      )}
-    //      </div>
    
-    //      <div className='main-layout-box2'>
-    //       <h2 className='main-layout-box2-text'>Add a task</h2>
-    //          <textarea rows="5" cols="25"
-    //          type="text" placeholder="Add item" value={input}
-    //          onChange={(e)=> setInput(e.target.value)}
-    //          className='main-layout-box2-inputfield'
-    //          >
-    //          </textarea>
-    //          <div>
-    //            <button onClick={()=> handleSaveTask()}
-    //            className='main-layout-box2-submitbutton'
-    //            >
-    //             {editTodo ? "OK" : "Add"}
-    //            </button>
-    //          </div>
-             
-    //      </div>  
-    //     </div>
-    // </div>
-    // </ThemeProvider>
 
     <ThemeProvider theme={theme}>
        <div>
@@ -186,7 +125,9 @@ const theme = createTheme({
                 <Checkbox  color='primary' checked={todo.completed}
                 onChange={() => handleToggle(todo.id)}/>
                 </div>
-                  {todo.text}
+                 <div>{todo.text} 
+                 <span className='main-layout-box1-priority'>Priority - {todo.priority}</span>
+                 </div>  
                   <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>
                   <img src="../src/assets/dustbin.png" alt="dustbin" className='main-layout-box1-dustbin'>
                   </img>
@@ -213,12 +154,15 @@ const theme = createTheme({
    
          <div className='main-layout-box2'>
           <h2 className='main-layout-box2-text'>Add a task</h2>
-             <textarea rows="5" cols="25"
+             <textarea rows="3" cols="25" required
              type="text" placeholder="Add item" value={input}
              onChange={(e)=> setInput(e.target.value)}
              className='main-layout-box2-inputfield'
              >
              </textarea>
+             <PriorityLevel 
+             newPriority={newPriority}
+             setNewPriority={setNewPriority}/>
              <div>
                <button onClick={()=> handleSaveTask()}
                className='main-layout-box2-submitbutton'
