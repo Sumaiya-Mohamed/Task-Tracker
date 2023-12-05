@@ -1,11 +1,15 @@
-import React from "react";
-import "./PriorityLevel.scss"
+import React, { SetStateAction } from "react";
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 
-export function PriorityLevel({ newPriority, setNewPriority}) {
+type PriorityLevelProps = {
+   newPriority: "High" | "Medium" | "Low"; 
+   setNewPriority: React.Dispatch<SetStateAction<"High" | "Medium" | "Low">>;
+ };
+
+export const PriorityLevel: React.FC<PriorityLevelProps> = ({ newPriority, setNewPriority }) =>  {
 
 
   const handleChange = (event: SelectChangeEvent) => {
