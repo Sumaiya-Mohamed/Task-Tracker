@@ -32,7 +32,7 @@
 
             &-to-dos{
                 min-width: fit-content;
-                font-size: 20px;
+                font-size: 1em;
                 padding-left: 15px;
                 padding-right: 5px;
                 text-overflow: clip;
@@ -55,12 +55,26 @@
            
             &-inputfield{
                 width: 70%;
+                font-size: 1.2em;
             }
 
             &-submitbutton{
                 width: 30%;
             }
         }
+
+        &-edit {
+            width: 80%;
+        }
+         
+
+        &-dustbin{
+            width: 95%;
+            margin-left: 0;
+            padding: 0;
+           
+        }
+
 
     }
     
@@ -69,10 +83,12 @@
 .main-layout{
     display: grid;
     width: 100%;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 60% 45%);
     grid-template-rows: repeat(2,1fr);
     gap: 18px;
-    padding: 40px 55px;
+    padding-top: 40px;
+    padding-left: 5%;
+    padding-right: 8%;
     height: 80%;
     font-family: 'Inter',Arial, Helvetica, sans-serif;
   
@@ -93,7 +109,7 @@
         grid-row-start: 1;
         grid-row-end: 3;
         border-radius: 20px;
-        width: 100%;
+        
         
 
         &-text{
@@ -118,7 +134,7 @@
             background-color: white;
             padding-left: 10px;
             padding-right: 15px;
-            font-size: 15px;
+            font-size: 1.0625em;
             height: fit-content;
             border-radius: 20px;
             color: black;
@@ -142,8 +158,6 @@
             font-weight: 300;
         }
         &-edit {
-            justify-self: end;  
-            align-items: center;
             width: 90%;
         }
          
@@ -179,8 +193,8 @@
         }
 
         &-inputfield{
-            width: 60ch;
-            height: 20%;
+            width: 90%;
+            height: 35%;
             border-style: initial;
             margin-left: 20px;
             padding: 10px;
