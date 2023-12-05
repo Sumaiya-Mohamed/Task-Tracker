@@ -125,7 +125,7 @@ const theme = createTheme({
                 <Checkbox  color='primary' checked={todo.completed}
                 onChange={() => handleToggle(todo.id)}/>
                 </div>
-                 <div>{todo.text} 
+                 <div className='main-layout-box1-to-dos-todotext'>{todo.text} 
                  <span className='main-layout-box1-priority'>Priority - {todo.priority}</span>
                  </div>  
                   <button id={id} onClick={() => handleDelete(id)} className='main-layout-box1-delete'>

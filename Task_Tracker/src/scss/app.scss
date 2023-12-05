@@ -93,6 +93,7 @@
         grid-row-start: 1;
         grid-row-end: 3;
         border-radius: 20px;
+        width: 100%;
         
 
         &-text{
@@ -104,27 +105,21 @@
             padding: 15px 30px;
             font-size: 22px;
         }
-        &-flex{
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        
          
         &-to-dolist{
             list-style: none;
-             width: 80%;
-             
-            
-             
-        }
+             width: 95%;
+            }
 
         &-to-dos{
+           
             list-style: none;
             background-color: white;
-            padding-left: 60px;
-            padding-right: 60px;
-            font-size: 20px;
-            height: 3.5rem;
+            padding-left: 10px;
+            padding-right: 15px;
+            font-size: 15px;
+            height: fit-content;
             border-radius: 20px;
             color: black;
             margin-left: 15px;
@@ -132,9 +127,14 @@
             min-height: fit-content;
             min-width: fit-content;
             display: grid;
-             grid-template-columns: 0.5fr 4fr 3.5fr 2fr;
+             grid-template-columns: 10% 65% 15% 15%;
             align-items: center;
             justify-items: stretch;
+            width: fit-content;
+
+            &-todotext{
+                padding: 5%;
+            }
         }
         &-priority {
             display: block;
@@ -144,11 +144,15 @@
         &-edit {
             justify-self: end;  
             align-items: center;
+            width: 90%;
         }
          
 
         &-dustbin{
-            width: 28%;
+            width: 90%;
+            margin-left: 0;
+            padding: 0;
+           
         }
 
         &-delete{
