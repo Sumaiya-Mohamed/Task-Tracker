@@ -84,7 +84,13 @@ const theme = createTheme({
     const handleSaveTask = () => {
       if (!editTodo) {
          const newTodo = {id: uuidv4(), text: input, completed: false, priority: newPriority};
-        setTodos([...todos, newTodo])
+         if (newPriority === 'High') {
+          // If new task is high priority, move it to the top
+          setTodos([newTodo, ...todos]);
+        } else {
+          setTodos([...todos, newTodo]);
+        }
+        //setTodos([...todos, newTodo])
         setInput("")
         setNewPriority("High")
       } else {
@@ -167,7 +173,7 @@ const theme = createTheme({
              <PriorityLevel 
              newPriority={newPriority}
              setNewPriority={setNewPriority}/>
-             <div>
+             <div main-layout-box2-buttoncontainer>
                <button 
                  onClick={ () => {
                   handleSaveTask();

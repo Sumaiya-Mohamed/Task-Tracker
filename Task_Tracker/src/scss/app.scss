@@ -2,7 +2,7 @@
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:wght@400;500;600&display=swap');
 
 
-
+//992px
 @media screen and (max-width: 62.375em){
     body .main-layout{
         display: grid;
@@ -80,6 +80,23 @@
     
    }
 
+   @media screen and (max-width: 320px) {
+        .main-layout {
+
+            &-box2 {
+               padding-bottom: 2rem;
+        }
+        }  
+   }
+   @media screen and (max-width: 425px) {
+    .main-layout {
+
+        &-box2 {
+           padding-bottom: 4rem;
+    }
+    }  
+}
+
 .main-layout{
     display: grid;
     width: 100%;
@@ -89,7 +106,7 @@
     padding-top: 40px;
     padding-left: 5%;
     padding-right: 8%;
-    height: 80%;
+    height: 88%;
     font-family: 'Inter',Arial, Helvetica, sans-serif;
   
    
@@ -126,6 +143,8 @@
         &-to-dolist{
             list-style: none;
              width: 95%;
+             max-height: 300px; /* Adjust the max-height as needed */
+             overflow-x: auto;
             }
 
         &-to-dos{
@@ -204,6 +223,8 @@
             border-width: 2px;
             font-size: 1.25rem;
         }
+        
+        
 
         &-submitbutton{
             margin: 15px 20px;
@@ -213,6 +234,7 @@
             border-style: none;
             background-color: var(--color-dark-grey);
             color: white;
+            
         }
 
         &-submitbutton:hover {
