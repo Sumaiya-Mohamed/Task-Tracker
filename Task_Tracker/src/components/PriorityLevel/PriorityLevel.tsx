@@ -22,6 +22,7 @@ export const PriorityLevel: React.FC<PriorityLevelProps> = ({ newPriority, setNe
         <>
         <div className="container">
             <h3 className="container-heading">Priority Level</h3>
+            <div className="container-form">
             <FormControl sx={{ m: 1, minWidth: 140 }}>
         <InputLabel id="demo-simple-select-label">Priority</InputLabel>
         <Select
@@ -36,6 +37,7 @@ export const PriorityLevel: React.FC<PriorityLevelProps> = ({ newPriority, setNe
           <MenuItem value="Low">Low</MenuItem>
         </Select>
       </FormControl>
+      </div>
         </div>
         
         </>
