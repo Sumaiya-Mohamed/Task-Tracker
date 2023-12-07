@@ -9,6 +9,7 @@ Created by Rehumile Sekoto and Sumaiya Mohammed👥, we collaborated together to
  - 📅Calendar feature
  - 📝🗑️Edit and delete functionality
  - 🚩Identify tasks that need high, medium or low priority
+ - ✨Responsive layout across multiple screen sizes.
 
 
 ## Technologies used
@@ -16,8 +17,9 @@ Created by Rehumile Sekoto and Sumaiya Mohammed👥, we collaborated together to
  - SCSS
  - Material UI
  - Dayjs
-  
 
+  
+## Design
 [Figma Design](https://www.figma.com/file/SgpubXxVHJtfaLcnCZvRS2/Task-Tracker?type=design&node-id=0%3A1&mode=design&t=Ely1ijIgbE2TFaY1-1)
 
 ![Alt text](./Task_Tracker/public/tasktracker.png "Task Tracker Visuals")
