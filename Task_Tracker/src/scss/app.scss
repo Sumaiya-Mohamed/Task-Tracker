@@ -7,9 +7,11 @@
     body .main-layout{
         display: grid;
         width: 100%;
-        grid-template-columns: repeat(1,1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: repeat(3,1fr);
-        padding-left: 25px;
+        gap: 5%;
+        margin-bottom: 10%;
+        justify-items: center;
        
 
         &-box{
@@ -18,6 +20,7 @@
             grid-row-start: 1;
             grid-row-end: 2;
             width: 90%;
+            max-height: fit-content;
         }
         
         &-box1{
@@ -27,18 +30,51 @@
             grid-row-end: 4;
             border-radius: 15px;
             width: 90%;
+            height: fit-content;
 
-           
-
+            &-to-dolist{
+                list-style: none;
+                 width: 95%;
+                 padding-right: 0.3rem;
+                 max-height: 280px; /* Adjust the max-height as needed */
+                 overflow-x: hidden;
+                 overflow-y: scroll;
+                 padding-bottom: 8%;
+    
+            }   
+            
             &-to-dos{
                 min-width: fit-content;
                 font-size: 1em;
                 padding-left: 15px;
                 padding-right: 5px;
-                text-overflow: clip;
+                text-overflow:ellipsis;
                 height: fit-content;
+                min-height: fit-content;
                 padding-bottom: 15px;
+                width: 100%;
+                
+
+                &-todotext{
+                    padding: 3%;
+                    width: 70%;
+                }
             }
+         
+            &-to-dolist::-webkit-scrollbar {
+                width: 7px;
+              }
+              
+              &-to-dolist::-webkit-scrollbar-thumb {
+                background-color: #888;
+                border-radius: 10px;
+              }
+              &-to-dolist::-webkit-scrollbar-thumb:hover {
+                background-color: #1E1E1E;
+              }
+              &-to-dolist::-webkit-scrollbar-thumb {
+                transition: background-color 0.3s ease;
+              }
 
            
         }
@@ -51,36 +87,39 @@
             grid-row-end: 3;
             border-radius: 20px;
             width: 90%;
-            min-height: fit-content;
+            height: fit-content;
            
             &-inputfield{
-                width: 70%;
+                width: 80%;
                 font-size: 1.2em;
+                height: 65%;
             }
 
             &-submitbutton{
                 width: 30%;
             }
+
         }
 
         &-edit {
-            width: 80%;
+            width: 70%;
         }
          
 
         &-dustbin{
-            width: 95%;
+            width: 100%;
             margin-left: 0;
             padding: 0;
            
         }
 
+       
 
     }
     
    }
 
-   @media screen and (max-width: 320px) {
+ /*  @media screen and (max-width: 320px) {
         .main-layout {
 
             &-box2 {
@@ -95,7 +134,7 @@
            padding-bottom: 4rem;
     }
     }  
-}
+}*/
 
 .main-layout{
     display: grid;
@@ -108,7 +147,7 @@
     padding-right: 8%;
     height: 88%;
     font-family: 'Inter',Arial, Helvetica, sans-serif;
-  
+    margin-bottom: 3%;
    
 
     &-box{
@@ -147,6 +186,8 @@
              max-height: 600px; /* Adjust the max-height as needed */
              overflow-x: hidden;
              overflow-y: scroll;
+
+            
             }
             &-to-dolist::-webkit-scrollbar {
                 width: 12px;
@@ -221,6 +262,9 @@
         grid-row-start: 2;
         grid-row-end: 3;
         border-radius: 15px;
+        width: 100%;
+       
+  
 
         &-text{
             padding: 15px 30px;
@@ -228,11 +272,11 @@
         }
 
         &-inputfield{
-            width: 90%;
+            width: 80%;
             height: 35%;
             border-style: initial;
             margin-left: 20px;
-            padding: 10px;
+            padding: 5px;
             border-radius: 15px;
             border-style: groove;
             border-color: var(--color-dark-grey);
