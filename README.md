@@ -17,6 +17,7 @@ Created by Rehumile Sekoto and Sumaiya Mohammed👥, we collaborated together to
  - SCSS
  - Material UI
  - Dayjs
+ - Node.js
 
   
 ## Design
