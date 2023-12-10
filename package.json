@@ -10,6 +10,7 @@
     "@progress/kendo-react-dateinputs": "^6.1.1",
     "@progress/kendo-react-intl": "^6.1.1",
     "@progress/kendo-svg-icons": "^2.0.0",
+    "boxicons": "^2.1.4",
     "dayjs": "^1.11.10",
     "sass": "^1.69.5"
   }
