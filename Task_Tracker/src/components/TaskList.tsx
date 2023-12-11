@@ -35,10 +35,24 @@ export default function TaskList({
               <div className="main-layout-box1-to-dos-todotext">
                 {todo.text}
                 <span className="main-layout-box1-priority">
-                  Priority - {todo.priority}
+                  {todo.priority}
                 </span>
               </div>
-              <button
+              <div className="main-layout-box1-edit">
+                <i className='bx bx-edit'
+                onClick={() => handleEditTask(todo.id)}
+                ></i>
+                </div>
+              <div className="main-layout-box1-delete">
+                <i className='bx bx-trash main-layout-box1-delete'
+                onClick={() => {
+                  handleDelete(id);
+                }}
+                id={id.toString()}></i>
+              </div>
+              
+              
+              {/* <button
                 onClick={() => {
                   handleDelete(id);
                 }}
@@ -61,7 +75,7 @@ export default function TaskList({
                 >
                   <EditIcon sx={{ fontSize: "1.7rem" }} />
                 </IconButton>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

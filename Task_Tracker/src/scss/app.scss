@@ -35,7 +35,6 @@
             &-to-dolist{
                 list-style: none;
                  width: 95%;
-                 padding-right: 0.3rem;
                  max-height: 280px; /* Adjust the max-height as needed */
                  overflow-x: hidden;
                  overflow-y: scroll;
@@ -59,6 +58,7 @@
                 &-todotext{
                     padding: 3%;
                     text-overflow:ellipsis;
+                    font-size: 0.7rem;
                 }
             }
          
@@ -120,22 +120,7 @@
     
    }
 
- /*  @media screen and (max-width: 320px) {
-        .main-layout {
 
-            &-box2 {
-               padding-bottom: 2rem;
-        }
-        }  
-   }
-   @media screen and (max-width: 425px) {
-    .main-layout {
-
-        &-box2 {
-           padding-bottom: 4rem;
-    }
-    }  
-}*/
 
 .main-layout{
     display: grid;
@@ -168,6 +153,7 @@
         border-radius: 20px;
         
         
+        
 
         &-text{
             padding: 15px 30px;
@@ -183,7 +169,8 @@
         &-to-dolist{
             list-style: none;
              width: 95%;
-             padding-right: 0.3rem;
+             padding-right: 1rem;
+             
              max-height: 600px; /* Adjust the max-height as needed */
              overflow-x: hidden;
              overflow-y: scroll;
@@ -206,11 +193,12 @@
               }
 
         &-to-dos{
-           
+            box-shadow: 0px 0px 9.356px 0px #E5E5E5;
             list-style: none;
             background-color: white;
-            padding-left: 10px;
+             padding-left: 10px;
             padding-right: 15px;
+            padding: 10px;
             font-size: 1.0625em;
             height: fit-content;
             border-radius: 20px;
@@ -220,22 +208,32 @@
             min-height: fit-content;
             min-width: fit-content;
             display: grid;
-             grid-template-columns: 10% 65% 15% 15%;
-            align-items: center;
-            justify-items: stretch;
-            width: fit-content;
+            //grid-template-columns: 10% 65% 15% 15%;
+            grid-template-columns: 0.4fr 2fr 0.3fr 0.3fr; // changed it because the responsiveness when the screen devices changed starts
+            //make the elements overlap 
+           align-items: center;
+            //width: fit-content;
 
             &-todotext{
                 padding: 5%;
+                text-transform: capitalize;
             }
         }
         &-priority {
             display: block;
             font-size: 0.7rem;
-            font-weight: 300;
+            font-weight: 400;
+            border-radius: 0.29238rem;
+            background: #FCEEF5;
+            padding: 0.21925rem 0.36544rem 0.21925rem 0.43856rem;
+            justify-content: center;
+            align-items: center;
+            gap: 0.58475rem;
+            width: max-content;
+            margin-top: 0.3rem;
         }
         &-edit {
-            width: 90%;
+            cursor: pointer;
         }
          
 
@@ -246,14 +244,14 @@
            
         }
 
-        &-delete{
-             width: 28%;
-             margin-left: 10%; 
+         &-delete{
+        //      width: 28%;
+        //      margin-left: 10%; 
              cursor: pointer;
-             background-color: white;
-             border-style: none;
-             justify-self: end;
-        }
+        //      background-color: white;
+        //      border-style: none;
+        //      justify-self: end;
+         }
     }
 
     &-box2{
