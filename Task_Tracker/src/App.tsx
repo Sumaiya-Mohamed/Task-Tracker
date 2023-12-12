@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material/styles";
 import { ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import TaskList from "./components/TaskList";
+import {TaskList} from "./components/TaskList";
 import AddTask from "./components/AddTask";
 
 interface item {
@@ -33,15 +33,16 @@ export const App: React.FC = () => {
     },
   });
 
-  /*Function that handles the delete functionality for each */
-  function handleDelete(id: number) {
+  /*Function that handles the delete functionality for each task*/
+  function handleDelete(id: number): void {
     const taskCopy = [...todos];
     taskCopy.splice(id, 1);
     setTodos(taskCopy);
+    return;
   }
 
   /*Function to cross out/ tick when a user finishes a task */
-  const handleToggle = (id: string) => {
+  const handleToggle = (id: string): void => {
     console.log(id);
     setTodos(
       todos.map((todo) => {
@@ -99,9 +100,10 @@ export const App: React.FC = () => {
     }
   };
 
-  const handleEditTask = (id: string) => {
+  const handleEditTask = (id: string): void => {
     const findTodo = todos.find((todo) => todo.id === id);
     setEditTodo(findTodo || null);
+    return;
   };
 
   return (

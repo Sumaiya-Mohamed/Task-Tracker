@@ -1,14 +1,26 @@
 import React from "react";
 import { Checkbox } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-import EditIcon from "@mui/icons-material/Edit";
 
-export default function TaskList({
+interface todo {
+  id: string;
+  text: string;
+  completed: boolean;
+  priority: "High" | "Medium" | "Low";
+}
+
+type TaskListProps = {
+  todos: todo[];
+  handleToggle: (id: string) => void;
+  handleDelete: (id: number) => void;
+  handleEditTask: (id: string) => void;
+};
+
+export const TaskList: React.FC<TaskListProps> =({
   todos,
   handleToggle,
   handleDelete,
   handleEditTask,
-}) {
+}) => {
   return (
     <div className="main-layout-box1">
       <h1 className="main-layout-box1-text">Tasks</h1>
