@@ -15,10 +15,16 @@ interface item {
 }
 
 export const App: React.FC = () => {
+  
+  const localStorageKey = 'dataKey';
 
+  const taskStorage: item[] = JSON.parse(localStorage.getItem(localStorageKey) || '[]');
 
-  const [todos, setTodos] = useState<item[]>([]);
+  const [todos, setTodos] = useState<item[]>(taskStorage);
 
+  useEffect(() => {
+    localStorage.setItem(localStorageKey, JSON.stringify(todos))
+  }, [todos])
 
   const [input, setInput] = useState<string>("");
 
@@ -127,7 +133,6 @@ export const App: React.FC = () => {
             handleToggle={handleToggle}
             handleDelete={handleDelete}
             handleEditTask={handleEditTask}
-            setTodos={setTodos}
           />
 
           <AddTask

@@ -1,4 +1,4 @@
-import React, {useEffect, SetStateAction} from "react";
+import React from "react";
 import { Checkbox } from "@mui/material";
 
 interface todo {
@@ -14,7 +14,6 @@ type TaskListProps = {
   handleToggle: (id: string) => void;
   handleDelete: (id: number) => void;
   handleEditTask: (id: string) => void;
-  setTodos:  React.Dispatch<SetStateAction<todo[]>>;
 };
 
 export const TaskList: React.FC<TaskListProps> =({
@@ -22,7 +21,6 @@ export const TaskList: React.FC<TaskListProps> =({
   handleToggle,
   handleDelete,
   handleEditTask,
- // setTodos
 }) => {
    
   
