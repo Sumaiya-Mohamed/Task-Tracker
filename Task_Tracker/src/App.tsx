@@ -5,7 +5,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import {TaskList} from "./components/TaskList";
-import AddTask from "./components/AddTask";
+import {AddTask} from "./components/AddTask";
 
 interface item {
   id: string;
@@ -15,7 +15,10 @@ interface item {
 }
 
 export const App: React.FC = () => {
+
+
   const [todos, setTodos] = useState<item[]>([]);
+
 
   const [input, setInput] = useState<string>("");
 
@@ -25,8 +28,6 @@ export const App: React.FC = () => {
     "High"
   );
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [data, setData] = useState<item[]>([]);
 
   const theme = createTheme({
     palette: {
@@ -36,6 +37,7 @@ export const App: React.FC = () => {
     },
   });
 
+
   /*Function that handles the delete functionality for each task*/
   function handleDelete(id: number): void {
     const taskCopy = [...todos];
@@ -43,7 +45,7 @@ export const App: React.FC = () => {
     setTodos(taskCopy);
     return;
   }
-
+ 
   /*Function to cross out/ tick when a user finishes a task */
   const handleToggle = (id: string): void => {
     console.log(id);
@@ -109,9 +111,7 @@ export const App: React.FC = () => {
     return;
   };
 
-  useEffect(() => {
-    localStorage.setItem('dataKey', JSON.stringify(data));
-  },[])
+    
 
   return (
     <ThemeProvider theme={theme}>
@@ -127,6 +127,7 @@ export const App: React.FC = () => {
             handleToggle={handleToggle}
             handleDelete={handleDelete}
             handleEditTask={handleEditTask}
+            setTodos={setTodos}
           />
 
           <AddTask

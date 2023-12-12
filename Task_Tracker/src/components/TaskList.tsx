@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, SetStateAction} from "react";
 import { Checkbox } from "@mui/material";
 
 interface todo {
@@ -6,6 +6,7 @@ interface todo {
   text: string;
   completed: boolean;
   priority: "High" | "Medium" | "Low";
+  
 }
 
 type TaskListProps = {
@@ -13,6 +14,7 @@ type TaskListProps = {
   handleToggle: (id: string) => void;
   handleDelete: (id: number) => void;
   handleEditTask: (id: string) => void;
+  setTodos:  React.Dispatch<SetStateAction<todo[]>>;
 };
 
 export const TaskList: React.FC<TaskListProps> =({
@@ -20,8 +22,11 @@ export const TaskList: React.FC<TaskListProps> =({
   handleToggle,
   handleDelete,
   handleEditTask,
+ // setTodos
 }) => {
-  return (
+   
+  
+ return (
     <div className="main-layout-box1">
       <h1 className="main-layout-box1-text">Tasks</h1>
       {/*Conditional rendering that will render the task once saved and no task added then a message will appear */}

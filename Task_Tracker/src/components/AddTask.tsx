@@ -1,14 +1,32 @@
-import React from "react";
+import React, {SetStateAction} from "react";
 import { PriorityLevel } from "./PriorityLevel";
 
-export default function AddTask({
+interface item {
+  id: string;
+  text: string;
+  completed: boolean;
+  priority: "High" | "Medium" | "Low";
+}
+
+type AddTaskProps = {
+  input: string,
+  setInput: React.Dispatch<SetStateAction<string>>;
+  newPriority: "High" | "Medium" | "Low";
+  setNewPriority: React.Dispatch<SetStateAction<"High" | "Medium" | "Low">>
+  handleSaveTask: () => void;
+  editTodo: item | null;
+}
+
+export const AddTask: React.FC<AddTaskProps> = ({
   input,
   setInput,
   newPriority,
   setNewPriority,
   handleSaveTask,
   editTodo,
-}) {
+}) => {
+
+  
   return (
     <div className="main-layout-box2">
       <h2 className="main-layout-box2-text">Add a task</h2>
@@ -25,7 +43,7 @@ export default function AddTask({
         newPriority={newPriority}
         setNewPriority={setNewPriority}
       />
-      <div main-layout-box2-buttoncontainer>
+      <div main-layout-box2-buttoncontainer="true">
         <button
           onClick={() => {
             handleSaveTask();
