@@ -25,6 +25,9 @@ export const App: React.FC = () => {
     "High"
   );
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [data, setData] = useState<item[]>([]);
+
   const theme = createTheme({
     palette: {
       primary: {
@@ -105,6 +108,10 @@ export const App: React.FC = () => {
     setEditTodo(findTodo || null);
     return;
   };
+
+  useEffect(() => {
+    localStorage.setItem('dataKey', JSON.stringify(data));
+  },[])
 
   return (
     <ThemeProvider theme={theme}>

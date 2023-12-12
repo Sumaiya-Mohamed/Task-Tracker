@@ -21,6 +21,7 @@
             grid-row-end: 2;
             width: 90%;
             max-height: fit-content;
+            
         }
         
         &-box1{
@@ -141,7 +142,6 @@
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
-
     }
 
     &-box1{
@@ -280,7 +280,8 @@
             border-style: groove;
             border-color: var(--color-dark-grey);
             border-width: 2px;
-            font-size: 1.25rem;
+            font-size: 1.1rem;
+            font-family: Arial, Helvetica, sans-serif;
         }
         
         
