@@ -1,17 +1,43 @@
 {
+  "name": "task-tracker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "homepage": "https://sumaiya-mohamed.github.io/Task_Tracker"
+  },
   "dependencies": {
-    "@date-io/date-fns": "^2.17.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
-    "@material-ui/pickers": "^3.3.11",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.14.18",
     "@mui/material": "^5.14.18",
     "@mui/x-date-pickers": "^6.18.1",
-    "@progress/kendo-licensing": "^1.3.3",
-    "@progress/kendo-react-dateinputs": "^6.1.1",
-    "@progress/kendo-react-intl": "^6.1.1",
-    "@progress/kendo-svg-icons": "^2.0.0",
-    "boxicons": "^2.1.4",
     "dayjs": "^1.11.10",
-    "sass": "^1.69.5"
+    "install": "^0.13.0",
+    "npm": "^10.2.4",
+    "react": "^18.2.0",
+    "react-calendar": "^4.6.1",
+    "react-dom": "^18.2.0",
+    "uuid": "^9.0.1",
+    "uuidv4": "^6.2.13"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@typescript-eslint/eslint-plugin": "^6.10.0",
+    "@typescript-eslint/parser": "^6.10.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "eslint": "^8.53.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.4",
+    "sass": "^1.69.5",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.0"
   }
 }
