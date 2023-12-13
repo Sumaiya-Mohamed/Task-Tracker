@@ -141,6 +141,9 @@
         grid-column-end: 2;
         grid-row-start: 1;
         grid-row-end: 2;
+        background-color: var(--color-light-pink);
+        padding-left: 160px;
+        border-radius: 20px;
     }
 
     &-box1{
@@ -302,29 +305,4 @@
     }
 }
 
-.MuiPickersCalendarHeader-root.css-nk89i7-MuiPickersCalendarHeader-root{
-    background-color: var(--color-dark-grey);
-   }
-
-.css-cyfsxc-MuiPickersCalendarHeader-labelContainer{
-    color: white;
-}
-
-.MuiDateCalendar-root.css-1q04gal-MuiDateCalendar-root{
-    width: 100%;
-    background-color: var(--color-light-pink);
-    border-radius: 20px;
-}
-
-.css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon{
-  color: white;
-}
-
-.MuiSvgIcon-root.MuiSvgIcon-fontSizeInherit.css-1vooibu-MuiSvgIcon-root{
-  color: white;
-}
-
-.MuiIconButton-sizeLarge {
-    color: yellow;
-}
 
