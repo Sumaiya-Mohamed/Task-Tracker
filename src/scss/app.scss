@@ -21,7 +21,9 @@
             grid-row-end: 2;
             width: 90%;
             max-height: fit-content;
-            
+            background-color: var(--color-light-pink);
+            padding-left: 10%;
+            border-radius: 20px;
         }
         
         &-box1{
