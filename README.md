@@ -19,8 +19,15 @@ Created by Rehumile Sekoto and Sumaiya Mohammed👥, we collaborated together to
  - Dayjs
  - Node.js
 
-  
+## Project Link
+
+[Click here](https://sumaiya-mohamed.github.io/Task-Tracker/)
+
 ## Design
 [Figma Design](https://www.figma.com/file/SgpubXxVHJtfaLcnCZvRS2/Task-Tracker?type=design&node-id=0%3A1&mode=design&t=Ely1ijIgbE2TFaY1-1)
 
 ![Alt text](./public/tasktracker.png "Task Tracker Visuals") 
+
+## Demo
+
+[Click the link to view demo](https://vimeo.com/893854050?share=copy)
