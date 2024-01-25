@@ -1,8 +1,8 @@
 
-# ✨Task Tracker 📄📄 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)
+# ✨Welcom to Task Tracker 📄📄 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)  [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)  [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=Sumaiya-Mohamed_Task-Tracker&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=Sumaiya-Mohamed_Task-Tracker)
 ![Alt text](./public/tasktracker.png "Task Tracker Visuals")
 
-Welcome to Task Tracker, a simple and minimalist to do list application.
+Task Tracker, a simple and minimalist to do list application.
 Created by Rehumile Sekoto and Sumaiya Mohammed👥, we collaborated together to bring to life a web app that allows you to track your task, add them to the list, edit if needed and remove them when complete.
 
 ## Key Features
