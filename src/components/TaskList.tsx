@@ -1,7 +1,7 @@
 import React from "react";
 import { Checkbox } from "@mui/material";
 
-interface todo {
+type todo = {
   id: string;
   text: string;
   completed: boolean;
@@ -55,42 +55,19 @@ export const TaskList: React.FC<TaskListProps> =({
               </div>
               <div className="main-layout-box1-edit">
                 <div className='bx bx-edit'
+                role="button"
                 onClick={() => handleEditTask(todo.id)}
                 ></div>
                 </div>
               <div className="main-layout-box1-delete">
                 <div className='bx bx-trash main-layout-box1-delete'
+                role="button"
                 onClick={() => {
                   handleDelete(id);
                 }}
                 id={id.toString()}></div>
               </div>
               
-              
-              {/* <button
-                onClick={() => {
-                  handleDelete(id);
-                }}
-                id={id.toString()}
-                className="main-layout-box1-delete"
-              >
-                <img
-                  src="../src/assets/dustbin.png"
-                  alt="dustbin"
-                  className="main-layout-box1-dustbin"
-                ></img>
-              </button>
-              <div>
-                <IconButton
-                  aria-label="edit"
-                  size="large"
-                  onClick={() => handleEditTask(todo.id)}
-                  className="main-layout-box1-edit"
-                  sx={{ color: "#000" }}
-                >
-                  <EditIcon sx={{ fontSize: "1.7rem" }} />
-                </IconButton>
-              </div> */}
             </div>
           ))}
         </div>
