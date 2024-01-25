@@ -84,9 +84,7 @@
               &-to-dolist::-webkit-scrollbar-thumb:hover {
                 background-color: #1E1E1E;
               }
-              &-to-dolist::-webkit-scrollbar-thumb {
-                transition: background-color 0.3s ease;
-              }
+              
 
            
         }
@@ -201,9 +199,7 @@
               &-to-dolist::-webkit-scrollbar-thumb:hover {
                 background-color: #1E1E1E;
               }
-              &-to-dolist::-webkit-scrollbar-thumb {
-                transition: background-color 0.3s ease;
-              }
+             
 
         &-to-dos{
             box-shadow: 0px 0px 9.356px 0px #E5E5E5;
@@ -211,7 +207,6 @@
             background-color: white;
              padding-left: 10px;
             padding-right: 15px;
-            padding: 10px;
             font-size: 1.0625em;
             height: fit-content;
             border-radius: 20px;
@@ -221,11 +216,10 @@
             min-height: fit-content;
             min-width: fit-content;
             display: grid;
-            //grid-template-columns: 10% 65% 15% 15%;
             grid-template-columns: 0.4fr 2fr 0.3fr 0.3fr; // changed it because the responsiveness when the screen devices changed starts
             //make the elements overlap 
            align-items: center;
-            //width: fit-content;
+            
 
             &-todotext{
                 padding: 5%;
@@ -258,12 +252,7 @@
         }
 
          &-delete{
-        //      width: 28%;
-        //      margin-left: 10%; 
              cursor: pointer;
-        //      background-color: white;
-        //      border-style: none;
-        //      justify-self: end;
          }
     }
 
@@ -290,7 +279,6 @@
             margin-left: 20px;
             padding: 5px;
             border-radius: 15px;
-            border-style: groove;
             border-color: var(--color-dark-grey);
             border-width: 2px;
             font-size: 1.1rem;

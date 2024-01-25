@@ -54,16 +54,16 @@ export const TaskList: React.FC<TaskListProps> =({
                 </span>
               </div>
               <div className="main-layout-box1-edit">
-                <i className='bx bx-edit'
+                <div className='bx bx-edit'
                 onClick={() => handleEditTask(todo.id)}
-                ></i>
+                ></div>
                 </div>
               <div className="main-layout-box1-delete">
-                <i className='bx bx-trash main-layout-box1-delete'
+                <div className='bx bx-trash main-layout-box1-delete'
                 onClick={() => {
                   handleDelete(id);
                 }}
-                id={id.toString()}></i>
+                id={id.toString()}></div>
               </div>
               
               
